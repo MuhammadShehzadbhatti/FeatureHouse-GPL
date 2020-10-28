@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and abstract="true" mandatory="true" name="GPL_TRY_11">
+				<and abstract="true" mandatory="true" name="Node">
+					<feature mandatory="true" name="Position"/>
+				</and>
+				<and abstract="true" mandatory="true" name="Edge">
+					<feature name="Directed"/>
+					<feature name="Weighted"/>
+				</and>
+				<alt abstract="true" name="Search">
+					<feature mandatory="true" name="DFS"/>
+					<feature mandatory="true" name="BFS"/>
+				</alt>
+				<or abstract="true" name="Algorithm">
+					<feature mandatory="true" name="MST"/>
+					<feature mandatory="true" name="Cyclic"/>
+					<feature mandatory="true" name="Transpose"/>
+					<feature mandatory="true" name="ShortestPath"/>
+				</or>
+			</and>
+		</struct>
+		<constraints>
+			<rule>
+				<imp>
+					<var>Transpose</var>
+					<var>Directed</var>
+				</imp>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
